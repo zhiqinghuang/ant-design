@@ -18,7 +18,11 @@ export default function demoTest(component, options = {}) {
       testMethod = test.skip;
     }
     testMethod(`renders ${file} correctly`, () => {
-      MockDate.set(new Date('2016-11-22').getTime() + new Date().getTimezoneOffset() * 60 * 1000);
+      if (file.indexOf('date-picker/demo/locale.md') >= 0) {
+        MockDate.set(new Date('2016-11-22').getTime());
+      } else {
+        MockDate.set(new Date('2016-11-22').getTime() + new Date().getTimezoneOffset() * 60 * 1000);
+      }
       const demo = require('../.' + file);
       const wrapper = render(demo);
       expect(renderToJson(wrapper)).toMatchSnapshot();
