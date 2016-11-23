@@ -21,7 +21,7 @@ export default function demoTest(component, options = {}) {
       if (file.indexOf('date-picker/demo/locale.md') >= 0) {
         MockDate.set(new Date('2016-11-22').getTime());
       } else {
-        MockDate.set(new Date('2016-11-22').getTime() + new Date().getTimezoneOffset() * 60 * 1000);
+        MockDate.set(new Date('2016-11-22').getTime() + new Date().getTimezoneOffset() * 60 * 1000, 0);
       }
       const demo = require('../.' + file);
       const wrapper = render(demo);
