@@ -10,6 +10,6 @@
     "tests/.*\\.js$": "node_modules/babel-jest",
     "\\.md$": "node_modules/antd-demo-jest"
   },
-  "testRegex": "/tests/node/.*\\.test\\.js$",
+  "testRegex": "/tests/.*demo\\.test\\.js$",
   "testEnvironment": "node"
 }
